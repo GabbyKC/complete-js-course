@@ -6,13 +6,17 @@
     <title>Dice Game</title>
     <link href="https://fonts.googleapis.com/css?family=Hepta+Slab&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="dice.css">
+    <script src="https://kit.fontawesome.com/f9d3071f5e.js"></script>
 </head>
 
 <body>
 
     <div class="container">
+        <div class="new-game">
+            <button id="button-new" class="new" type="button" name="button"><i class="fas fa-plus"></i> New Game</button>
+        </div>
         <div class="player-container">
-            <div id="player-0-panel" class="players active">
+            <div id="player-0-panel" class="players">
                 <h2 class="centre" id="name-0">Player One</h2>
                 <div class="total" id="score-0">0</div>
                 <div class="">
@@ -22,12 +26,12 @@
             </div>
 
             <div class="">
+                <button id="button-roll" type="button" name="button"><i class="fas fa-dice"></i> Roll da dice</button>
+                <button id="button-hold" type="button" name="button"><i class="fas fa-save"></i> Hold ze goods</button>
+
                 <div class="">
                     <img class="dice" src="dice-6.png" alt="">
                 </div>
-
-                <button id="button-roll" type="button" name="button">Roll da dice</button>
-                <button id="button-hold" type="button" name="button">Hold ze goods</button>
             </div>
 
             <div id="player-1-panel" class="players">
