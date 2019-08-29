@@ -13,7 +13,6 @@ html {
     flex-wrap: wrap;
     justify-content: center;
     margin: 20px 50px;
-
 }
 
 .player-container {
@@ -29,6 +28,10 @@ html {
 .active {
     background-color: pink;
     border: 2px solid yellow;
+}
+
+.winner {
+    background: yellow;
 }
 
 .centre {
