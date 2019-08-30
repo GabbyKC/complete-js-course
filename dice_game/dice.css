@@ -32,8 +32,9 @@ html {
 
 .players {
     background-color: white;
-    flex-basis: 20%;
     border: 2px solid grey;
+    width: 300px;
+    height: 300px;
 }
 
 .active {
@@ -49,6 +50,15 @@ html {
     text-align: center;
 }
 
+.button-cotainer {
+    text-align: center;
+}
+
+.dice-container {
+    display: flex;
+    margin-top: 20px;
+}
+
 .total {
     font-size: 30px;
     text-align: center;
@@ -61,7 +71,10 @@ html {
 
 .dice {
     height: 150px;
-    margin: 20px 0px 20px 85px;
+}
+
+.second {
+    margin-left: 20px;
 }
 
 button {
@@ -72,4 +85,18 @@ button {
     background-color: beige;
     border: 0.5px solid black;
     border-radius: 10%;
+}
+
+.hold {
+    margin-left: 35px;
+}
+
+input {
+    width: 130px;
+    height: 45px;
+    border: 0.5px solid black;
+    border-radius: 10%;
+    text-align: center;
+    margin-left: 70px;
+
 }
