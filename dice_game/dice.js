@@ -1,3 +1,8 @@
+// the rules are as follows:
+// you roll two sixes; you lose all your points
+// you roll a one, on either dice, you lose your current score
+// you determine the score to reach; if not, defualt is 100
+
 let scores, roundScore, activePlayer, gamePlaying, lastRolled;
 
 init();
@@ -32,10 +37,14 @@ function init() {
     document.getElementById('player-0-panel').classList.add('active');
 }
 
+function generateRandomNumber(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) ) + min;
+}
+
 function rollTheDice() {
     if (gamePlaying) {
-        let dice = Math.floor(Math.random() * 6) + 1;
-        let secondDice = Math.floor(Math.random() * 6) + 1;
+        let dice = generateRandomNumber(1, 6);
+        let secondDice = generateRandomNumber(1, 6);
         console.log(dice, secondDice);
         let diceDom = document.querySelector('.dice');
         let secondDiceDom = document.getElementById('second-dice');
