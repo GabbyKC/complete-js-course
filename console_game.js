@@ -63,6 +63,4 @@
     }
 
     nextQuestion();
-
-
 })();

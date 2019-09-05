@@ -1,0 +1,78 @@
+/* chilanka-regular - latin */
+@font-face {
+  font-family: 'Chilanka';
+  font-style: normal;
+  font-weight: 400;
+  src: url('fonts/chilanka-v5-latin-regular.eot'); /* IE9 Compat Modes */
+  src: local('Chilanka Regular'), local('Chilanka-Regular'),
+       url('fonts/chilanka-v5-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('fonts/chilanka-v5-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('fonts/chilanka-v5-latin-regular.woff') format('woff'), /* Modern Browsers */
+       url('fonts/chilanka-v5-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('fonts/chilanka-v5-latin-regular.svg#Chilanka') format('svg'); /* Legacy iOS */
+}
+
+body {
+    font-family: 'Chilanka';
+}
+
+.jumbotron {
+    background-image:url('budget_app_bg.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 250px;
+    margin-bottom: 0;
+}
+
+h1 {
+    color: #986211;
+}
+
+.nav-bar {
+    background-color: beige;
+    padding: 10px;
+}
+
+select {
+    margin-top: 8px;
+}
+
+input {
+    margin: 5px;
+}
+
+button {
+    height: 30px;
+    margin-top: 5px;
+}
+
+.container {
+    margin-top: 20px;
+}
+
+.income {
+    color: #79b894;
+    text-decoration: underline;
+}
+
+.expenses {
+    color: #81365a;
+    text-decoration: underline;
+}
+
+.boxes {
+    min-width: 300px;
+}
+
+.income-number {
+    color: #79b894;
+}
+
+.expense-number {
+    color: #81365a;
+}
+
+.available {
+    text-decoration: underline;
+}
