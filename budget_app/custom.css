@@ -76,3 +76,15 @@ button {
 .available {
     text-decoration: underline;
 }
+
+.remove {
+    display: none;
+    margin: 0;
+    height: 20px;
+}
+
+tr:hover td .remove {
+    display: inline-block;
+    background-color: #81365a;
+    color: white;
+}
