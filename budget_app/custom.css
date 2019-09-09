@@ -34,8 +34,9 @@ h1 {
     padding: 10px;
 }
 
-select {
-    margin-top: 8px;
+.dropdown {
+    margin-top: 5px;
+    height: 30px;
 }
 
 input {
@@ -69,11 +70,19 @@ button {
     color: #79b894;
 }
 
+.income-number::before {
+    content: '+ ';
+}
+
 .expense-number {
     color: #81365a;
 }
 
-.available {
+.expense-number::before {
+    content: "- ";
+}
+
+.month-year {
     text-decoration: underline;
 }
 
@@ -87,4 +96,28 @@ tr:hover td .remove {
     display: inline-block;
     background-color: #81365a;
     color: white;
+}
+
+.budget {
+    /* font-size: 26px; */
+    background-color: beige;
+    border: 1px solid black;
+}
+
+.budget-income {
+    background-color: #79b894;
+    color: white;
+}
+
+.budget-expense {
+    background-color: #81365a;
+    color: white;
+}
+
+.budget-good::before {
+    content: "+ ";
+}
+
+.budget-bad::before {
+    content: "- ";
 }
