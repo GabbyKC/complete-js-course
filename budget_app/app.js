@@ -1,11 +1,33 @@
+getMonth();
+
 document.getElementById('submit').addEventListener('click', createTable);
 
-getMonth();
+document.getElementById('amount').addEventListener('keyup', function(event) {
+    if (event.keyCode === 13) {
+        document.getElementById('submit').click();
+    }
+})
 
 function createTable() {
     let selection = document.getElementById('select').value;
+    if (selection === "") {
+        alert('Please select from the dropdown and fill in your data');
+        return false;
+    }
+
     let desc = document.getElementById('description').value;
+    if (!descriptionIsValid(desc)) {
+        alert('Description cannot be empty');
+        return false;
+    }
+
     let amount = document.getElementById('amount').value;
+    if(!amountIsValid(amount)) {
+        alert(`Amount input '${amount}' is not valid`);
+        return false;
+    }
+    amount = parseFloat(amount).toFixed(2);
+
     let incomeTable = document.getElementById('income-table');
     let expenseTable = document.getElementById('expense-table');
 
@@ -27,27 +49,35 @@ function createTable() {
     row.appendChild(rowItem2);
     row.appendChild(rowItem3);
 
-    if (selection === 'plus' && desc !== '' && amount !== '') {
-        // rowItem2.textContent = '+ ' + amount;
+    if (selection === 'plus') {
         rowItem2.className = 'income-number';
-        // rowItem2.setAttribute('name', 'credit');
         incomeTable.appendChild(row);
-    } else if (selection === 'minus' && desc !== '' && amount !== '') {
-        // rowItem2.textContent = '- ' + amount;
+    } else if (selection === 'minus') {
         rowItem2.className = 'expense-number';
-        // rowItem2.setAttribute('name', 'debit');
         expenseTable.appendChild(row);
     }
-    else {
-        alert('Please select from the dropdown and fill in your data')
-    }
+
     clearInputs();
     calculateTotals();
     removeRow();
 }
 
+function amountIsValid(amount) {
+    if (/^\d+\.?\d*$/.test(amount)) {
+        return true;
+    }
+    return false;
+}
+
+function descriptionIsValid(desc) {
+    if (/([^\s])/.test(desc)) {
+        return true;
+    }
+    return false;
+}
+
 function clearInputs() {
-    document.getElementById('select').value = 'defualt';
+    document.getElementById('select').value = '';
     document.getElementById('description').value = '';
     document.getElementById('amount').value = '';
 }
@@ -90,20 +120,22 @@ function calculateTotals() {
     let neg = calculateArrayElements(expenseList);
 
     let totalIncome = document.getElementById('total-income');
-    totalIncome.textContent = pos;
+    totalIncome.textContent = pos.toFixed(2);
     totalIncome.classList.add('budget-good');
 
     let totalExpenses = document.getElementById('total-expenses');
-    totalExpenses.textContent = neg;
+    totalExpenses.textContent = neg.toFixed(2);
     totalExpenses.classList.add('budget-bad');
 
     let budget = pos - neg;
 
     let available = document.getElementById('available-budget');
-    available.textContent = budget;
+    available.textContent = budget.toFixed(2);
 
     if (budget > 0) {
         available.classList.add('budget-good');
+    } else {
+        available.classList.remove('budget-good');
     }
 }
 

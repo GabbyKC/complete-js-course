@@ -14,6 +14,7 @@
 
 body {
     font-family: 'Chilanka';
+    background-color: mintcream;
 }
 
 .jumbotron {
@@ -90,16 +91,18 @@ button {
     display: none;
     margin: 0;
     height: 20px;
+
 }
 
 tr:hover td .remove {
     display: inline-block;
     background-color: #81365a;
     color: white;
+    position: absolute;
+    right: 10px;
 }
 
 .budget {
-    /* font-size: 26px; */
     background-color: beige;
     border: 1px solid black;
 }
@@ -120,4 +123,8 @@ tr:hover td .remove {
 
 .budget-bad::before {
     content: "- ";
+}
+
+td {
+    position: relative;
 }
