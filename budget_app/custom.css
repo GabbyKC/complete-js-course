@@ -53,6 +53,13 @@ button {
     margin-top: 20px;
 }
 
+@media (min-width: 768px) {
+    .container {
+        max-width: 900px;
+    }
+}
+
+
 .income {
     color: #79b894;
     text-decoration: underline;
